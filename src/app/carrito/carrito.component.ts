@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductosComponent} from 'src/app/compartida/productos/productos.component';
-
+import { ProductoService } from 'src/app/services/producto.service';
+import { Producto } from '../interfaces/producto.interface';
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -8,9 +9,10 @@ import {ProductosComponent} from 'src/app/compartida/productos/productos.compone
 })
 export class CarritoComponent implements OnInit {
 
+  carro:Producto[] = [];
   
 
-  constructor() { }
+  constructor(public productoService: ProductoService) { }
 
   // agregarcarro(item_id:string) {
   //   console.log(item_id)
@@ -21,6 +23,7 @@ export class CarritoComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
   }
 
 }

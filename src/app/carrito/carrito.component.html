@@ -1,4 +1,11 @@
-<p>carrito works!</p>
+<div class="container">
+    <div *ngFor="let item of productoService.carro_compras" class="col-4">
+        {{item.nombre}} precio: {{item.precio}}
+</div>
+</div>
+
+
+
 
 
 
