@@ -14,6 +14,8 @@
             <h2>Precio {{productoService.productos[id].precio | currency }} </h2>
             <p>{{productoService.productos[id].detalle}}</p>
             <a href="#" class="icon-link" routerLink="/"> Volver</a>
+            <button class="btn btn btn-primary ms-3" (click)="agregarcarro(productoService.productos[id])" routerLink="/carro">Agregar Al
+                carrito</button>
         </div>
 
 

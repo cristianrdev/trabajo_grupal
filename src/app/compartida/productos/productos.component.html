@@ -20,20 +20,20 @@
                         <div class="card-body">
                             <img src={{item.imgSrc}} alt={{item.name}} width="200" class="img-card">
                             <hr>
-                            <p>${{item.precio}}</p>
+                            <p>{{item.precio | currency:'CLP':'symbol-narrow' }}</p>
 
 
                             <button class="btn btn btn-secondary" routerLink="/detalle/{{item.id}}">Detalle</button>
-                            <br>
-                            <!-- <button class="btn btn btn-secondary" (click)="agregarcarro(item.id)">Agregar Al
-                                carrito</button> -->
+                            
+                            <button class="btn btn btn-primary ms-3" (click)="agregarcarro(item)" routerLink="/carro">Agregar Al
+                                carrito</button>
+<!-- 
+                            <form (ngSubmit)="agregarcarro(item)" >
+                               
 
-                            <form (ngSubmit)="agregarcarro(item)">
-                                <!-- <input [(ngModel)]="item" name="nombre" type="text" class="form-control" > -->
+                                <button type="submit" class="btn btn btn-primary" >Añadir al carrito </button>
 
-                                <button type="submit" class="btn btn btn-primary">Añadir al carrito </button>
-
-                            </form>
+                            </form> -->
 
                         </div>
                     </div>

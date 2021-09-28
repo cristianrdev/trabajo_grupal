@@ -17,6 +17,15 @@ export class DetalleComponent implements OnInit {
    }
   id: string = "";
 
+  agregarcarro(item: any) {
+    this.productoService.aniadirCarro(item);
+      
+      // this.carro.push(item);
+      // console.log(item)
+      // console.log("nombre añadido al carro", item.nombre);
+    
+  }
+
 
 
   ngOnInit(): void {

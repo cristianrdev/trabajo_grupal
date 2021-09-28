@@ -1,13 +1,35 @@
 <div class="container">
-    <div *ngFor="let item of productoService.carro_compras" class="col-4">
-        {{item.nombre}} precio: {{item.precio}}
+    <!-- <div ngIf="productoService.carro_compras">
+        
+    </div> -->
+
+    <div *ngIf="productoService.carro_compras==null; else carro_vacio">
+        <h1>Hay Productos</h1>
+    </div>
+
+    <ng-template #carro_vacio>
+        <h1>Carro Vacío</h1>
+    </ng-template>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID producto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of productoService.carro_compras">
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio| currency:'CLP':'symbol-narrow'}}</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <a routerLink="/">Atrás</a>
 </div>
-</div>
-
-
-
-
-
-
-
-

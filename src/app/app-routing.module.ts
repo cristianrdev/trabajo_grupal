@@ -15,6 +15,7 @@ const app_routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'carro', component: CarritoComponent},
     {path: 'detalle/:id', component: DetalleComponent},
+    {path: 'todos_productos', component: ProductosComponent},
     {path: '**', component: NotfoundComponent},
 
     
