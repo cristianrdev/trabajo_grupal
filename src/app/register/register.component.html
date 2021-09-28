@@ -1,0 +1,44 @@
+<div class="container">
+
+    <form (ngSubmit)="registrar()" class="col-md-6 form-register col-xs-12">
+
+        <h2> Registrarse </h2>
+
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Nombre : {{nombre}}</label>
+            <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido : {{apellido}}</label>
+            <input [(ngModel)]="apellido" name="apellido" type="text" class="form-control" id="apellido" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Dirección Email : {{email}}</label>
+            <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Nunca compartiremos tu información personal.</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Clave : {{password}}</label>
+            <input [(ngModel)]="password" name="password" type="password" class="form-control" id="password">
+            <div id="passHelp" class="form-text">Mayor a 8 caracteres.</div>
+        </div>
+        <div class="mb-3">
+            <label for="passwordConf" class="form-label">Confirme su clave : {{passwordConf}}</label>
+            <input [(ngModel)]="passwordConf" name="passwordConf" type="password" class="form-control" id="passwordConf">
+        </div>
+        <button type="submit" class="btn btn-primary" id="registrar">Registrar</button> <br /> <br />
+    </form>
+
+
+    <div class="alert alert-success" role="alert" *ngIf="registered">
+        Se ha registrado exitosamente
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="errorRegister">
+        Ingrese sus datos correctamente
+    </div>
+
+
+</div>
