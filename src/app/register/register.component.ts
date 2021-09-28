@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       // alert('El Nombre debe tener mínimo 4 caracteres');
       this.errores.push("El Nombre debe tener mínimo 4 caracteres");
       this.errorRegister = true;
-      return;
+      
     }
 
     if (this.apellido.length < 3 || this.apellido == null) {
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
       // alert('El Apellido debe tener mínimo 4 caracteres');
       this.errores.push("El Apellido debe tener mínimo 4 caracteres");
       this.errorRegister = true;
-      return;
+      
     }
     if (!this.isEmail(this.email)) {
       console.log('El Correo debe cumplir con un formato válido');
@@ -46,24 +46,24 @@ export class RegisterComponent implements OnInit {
       this.errores.push("El Correo debe cumplir con un formato válido");
       
       this.errorRegister = true;
-      return;
+      
     }
     if (this.password!=null && this.password.length < 7) {
       console.log('La contraseña debe tener mínimo 8 caracteres');
       // alert('La contraseña debe tener mínimo 8 caracteres');
       this.errores.push("La contraseña debe tener mínimo 8 caracteres");
       this.errorRegister = true;
-      return;
+      
     }
     if (this.password != this.passwordConf) {
       // alert('La contraseñas no coinciden');
       this.errores.push("La contraseñas no coinciden");
       this.errorRegister = true;
-      return;
+      
     }
     if (!this.errorRegister) {
       this.registered = true;
-      return;
+     
     }
 
     
