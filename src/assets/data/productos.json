@@ -1,0 +1,49 @@
+{
+    "productos": [
+      {
+        "id": 0,
+        "nombre": "Play Station 4",
+        "Fabricante": "Sony",
+        "precio": 400000,
+        "detalle": "detalle play 4",
+        "stock" : 8,
+        "imgSrc": "/assets/img/ps4.png"
+      },
+      {
+        "id": 1,
+        "nombre": "Nintendo Switch",
+        "Fabricante": "Nintendo",
+        "precio": 300000,
+        "detalle": "detalle nintendo switch",
+        "stock" : 12,
+        "imgSrc": "/assets/img/switch.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Play Station 5",
+        "Fabricante": "Sony",
+        "precio": 700000,
+        "detalle": "detalle nintendo playstation 5",
+        "stock" : 2,
+        "imgSrc": "/assets/img/ps5.PNG"
+      },
+      {
+        "id": 3,
+        "nombre": "Xbox one X",
+        "Fabricante": "Microsoft",
+        "precio": 700000,
+        "detalle": "detalle Xbox one X",
+        "stock" : 10,
+        "imgSrc": "/assets/img/xboxonex.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Xbox series S",
+        "Fabricante": "Microsoft",
+        "precio": 300000,
+        "detalle": "detalle Xbox series S",
+        "stock" : 50,
+        "imgSrc": "/assets/img/xboxs.jpg"
+      }
+    ]
+  }

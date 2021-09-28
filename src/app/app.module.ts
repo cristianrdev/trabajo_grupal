@@ -15,6 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CarritoComponent } from './carrito/carrito.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,16 @@ import { NotfoundComponent } from './notfound/notfound.component';
     RegisterComponent,
     HomeComponent,
     NotfoundComponent,
+    CarritoComponent,
+    DetalleComponent,
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule,
+     FormsModule, 
+     ReactiveFormsModule, 
+     HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

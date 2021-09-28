@@ -1,0 +1,21 @@
+
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">{{productoService.productos[id].nombre}}</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+            <img src={{productoService.productos[id].imgSrc}}  width="400" >
+            <div class="feature-icon bg-primary bg-gradient">
+          
+             
+            
+                
+               
+            </div>
+            <h2>Precio {{productoService.productos[id].precio | currency }} </h2>
+            <p>{{productoService.productos[id].detalle}}</p>
+            <a href="#" class="icon-link" routerLink="/"> Volver</a>
+        </div>
+
+
+    </div>
+</div>
