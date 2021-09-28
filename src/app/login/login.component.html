@@ -3,16 +3,23 @@
     <form (ngSubmit)="login()" class="col-md-6 form-register">
         <div class="mb-3">
             <label for="email" class="form-label form-label-sm">Dirección Email :</label>
-            <input type="email" class="form-control form-control-sm" id="email" placeholder="Email" [(ngModel)]="email" name="email">
+            <input type="email" class="form-control form-control-sm" id="email" placeholder="Email" [(ngModel)]="email"
+                name="email">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Clave :</label>
-            <input type="password" class="form-control form-control-sm" id="password" placeholder="Contraseña" [(ngModel)]="password" name="password">
+            <input type="password" class="form-control form-control-sm" id="password" placeholder="Contraseña"
+                [(ngModel)]="password" name="password">
         </div>
         <button type="submit" class="btn-sm btn-primary" id="login">Iniciar Sesion</button>
         <button type="button" class="btn-sm btn-secondary">Olvide la clave</button>
-    </form>
 
+    </form>
+    <ul>
+        <li *ngFor="let err of errores; let i = index" class="text-danger">
+            {{err}}
+        </li>
+    </ul>
 
 
     <div class="alert alert-success" role="alert" *ngIf="logged">

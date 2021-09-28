@@ -12,28 +12,22 @@ export class LoginComponent {
 
   logged: boolean = false;
   errorLogged: boolean = false;
+  errores:string[] = [];
 
   /* Completar esta funcion */
   login() {
     this.logged = false;
     this.errorLogged = false;
-    /* console.log('email ==>' + this.password);
-    console.log('pass ==>' + this.email); */
-    // console.log(this.regexp.test(this.email));
-
-    // if(this.email!=null || this.password!=null){//campos vacíos no nulos?
-
-    //   if(!this.regexp.test(this.email)==true){
-    //     alert("ingrese un email valido")}
-
-    // }
+    this.errores = [];
 
     if (!this.isEmail(this.email)) {
       console.log('El Correo debe cumplir con un formato válido');
+      this.errores.push("El Correo debe cumplir con un formato válido");
       this.errorLogged = true;
     }
     if (this.password != '12345678') {
       console.log('La contraseña debe tener 8 caracteres');
+      this.errores.push("La contraseña debe tener 8 caracteres");
       this.errorLogged = true;
     }
     if (!this.errorLogged) this.logged = true;
