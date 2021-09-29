@@ -7,6 +7,7 @@ import { Producto } from '../interfaces/producto.interface';
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css']
 })
+
 export class CarritoComponent implements OnInit {
 
   carro:Producto[] = [];

@@ -26,16 +26,12 @@ export class ProductosComponent implements OnInit {
 
   buscar(){
     console.log(this.busqueda)
-
-
   }
 
 
   
   constructor(public productoService: ProductoService) { 
     console.log("Objeto desde el component==>", productoService);
-    
-
   }
 
   ngOnInit(): void {

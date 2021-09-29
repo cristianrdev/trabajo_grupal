@@ -9,37 +9,25 @@ import { ProductoService } from 'src/app/services/producto.service';
   styleUrls: ['./detalle.component.css']
 })
 export class DetalleComponent implements OnInit {
+    id: string = "";
   
-  constructor(private activatedRoute: ActivatedRoute, public productoService: ProductoService) {
-    // productoService.productos[0];
-    // console.log("producto seleccionado", productoService.productos)
-
-   }
-  id: string = "";
-
-  agregarcarro(item: any) {
-    this.productoService.aniadirCarro(item);
-      
-      // this.carro.push(item);
-      // console.log(item)
-      // console.log("nombre añadido al carro", item.nombre);
+    constructor(private activatedRoute: ActivatedRoute, public productoService: ProductoService) {}
     
-  }
+
+    agregarcarro(item: any) {
+      this.productoService.aniadirCarro(item);  
+      }
 
 
 
-  ngOnInit(): void {
-    // let id = +this._route.snapshot.paramMap.get;
-    this.activatedRoute.params.subscribe(paramsId => {
-      this.id = paramsId.id;
-      console.log(this.id);
-      
-      // this.productoService.productos.id[this.id];
-      console.log("selecccionaddoo", this.productoService.productos.nombre);
+    ngOnInit(): void {
+      this.activatedRoute.params.subscribe(paramsId => {
+        this.id = paramsId.id;
+    
 
-  });
- 
-  }
+      });
+  
+    }
 
   
 

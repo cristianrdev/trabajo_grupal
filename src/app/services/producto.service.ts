@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Producto} from '../interfaces/producto.interface';
 import { HttpClient } from '@angular/common/http';
-import {Lista_producto} from '../interfaces/producto.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,6 @@ export class ProductoService {
   carro_compras: Producto[] = []
   constructor(private http:HttpClient) {
     this.cargarProductos();
-    // this.cargarProductosdos();
     console.log("producto service");
    }
 
@@ -31,21 +30,15 @@ export class ProductoService {
       elemento.stock=elemento.stock-1
       this.carro_compras.push(elemento)
       console.log("Stock", elemento.stock);
-      
-
     }else{
       alert("Sin Stock");
     }
-
   }
 
 
 
   eliminarCarro(elemento: any){
-   
     elemento.stock=elemento.stock+1
-
-    
     let indice = this.carro_compras.lastIndexOf(elemento) //obtiene el ultimo indice del elemento a borrar
     this.carro_compras.splice(indice, 1) //borra del carro de compras segun el índice obtenido
 
