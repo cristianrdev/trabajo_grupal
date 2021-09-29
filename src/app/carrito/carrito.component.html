@@ -20,6 +20,7 @@
                     <th scope="col">ID producto</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Acción</th>
 
                 </tr>
             </thead>
@@ -28,6 +29,7 @@
                     <td>{{item.id}}</td>
                     <td>{{item.nombre}}</td>
                     <td>{{item.precio| currency:'CLP':'symbol-narrow'}}</td>
+                    <td><button class="btn btn-secondary" (click)="eliminarcarro(item)">Eliminar</button> </td>
                 </tr>
 
 

@@ -42,7 +42,17 @@ export class ProductoService {
 
 
   eliminarCarro(elemento: any){
-    // this.carro_compras.
+   
+    elemento.stock=elemento.stock+1
+
+    
+    let indice = this.carro_compras.lastIndexOf(elemento) //obtiene el ultimo indice del elemento a borrar
+    this.carro_compras.splice(indice, 1) //borra del carro de compras segun el índice obtenido
+
+    
+    // this.carro_compras = this.carro_compras.filter(item => item!==elemento) este metodo borraría todos los parecidos
+    //sería inutil si hay mas de un producto similar en el carro de compras
+
   }
 
 

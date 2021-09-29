@@ -17,11 +17,6 @@ export class ProductosComponent implements OnInit {
 
   agregarcarro(item: any) {
     this.productoService.aniadirCarro(item);
-      
-      // this.carro.push(item);
-      // console.log(item)
-      // console.log("nombre añadido al carro", item.nombre);
-    
   }
 
   detalle(itemdetalle_id:string) {

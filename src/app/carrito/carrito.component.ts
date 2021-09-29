@@ -14,12 +14,11 @@ export class CarritoComponent implements OnInit {
 
   constructor(public productoService: ProductoService) { }
 
-  // agregarcarro(item_id:string) {
-  //   console.log(item_id)
-  //   this.carro.push(item_id);
-  //   console.log("por aca pasa")
-    
-  // }
+
+  eliminarcarro(item: any){
+    this.productoService.eliminarCarro(item)
+
+  }
 
 
   ngOnInit(): void {

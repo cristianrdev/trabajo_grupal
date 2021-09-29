@@ -33,7 +33,7 @@
         "Fabricante": "Microsoft",
         "precio": 700000,
         "detalle": "detalle Xbox one X",
-        "stock" : 10,
+        "stock" : 4,
         "imgSrc": "/assets/img/xboxonex.jpg"
       },
       {
@@ -42,7 +42,7 @@
         "Fabricante": "Microsoft",
         "precio": 300000,
         "detalle": "detalle Xbox series S",
-        "stock" : 50,
+        "stock" : 10,
         "imgSrc": "/assets/img/xboxs.jpg"
       }
     ]
