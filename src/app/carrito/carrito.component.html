@@ -3,33 +3,39 @@
         
     </div> -->
 
-    <div *ngIf="productoService.carro_compras==null; else carro_vacio">
-        <h1>Hay Productos</h1>
+    
+    <div *ngIf="productoService.carro_compras.length==0; else carro_vacio">
+        <h1>Carro Vacío</h1>
+        <div class="d-flex justify-content-center">
+            <img src="/assets/img/carrito_vacio.png" alt="carro_vacio" width="300" class="img-card">
+        </div>
+        
     </div>
 
     <ng-template #carro_vacio>
-        <h1>Carro Vacío</h1>
+        <h1>Carro de compras</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID producto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of productoService.carro_compras">
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.precio| currency:'CLP':'symbol-narrow'}}</td>
+                </tr>
+
+
+            </tbody>
+        </table>
     </ng-template>
 
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID producto</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
 
-            </tr>
-        </thead>
-        <tbody *ngFor="let item of productoService.carro_compras">
-            <tr>
-                <td>{{item.id}}</td>
-                <td>{{item.nombre}}</td>
-                <td>{{item.precio| currency:'CLP':'symbol-narrow'}}</td>
-            </tr>
-
-
-        </tbody>
-    </table>
     <a routerLink="/">Atrás</a>
 </div>

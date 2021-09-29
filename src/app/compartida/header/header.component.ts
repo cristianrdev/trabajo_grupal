@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Producto} from 'src/app/interfaces/producto.interface';
+import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
   selector: 'app-header',
@@ -7,21 +8,42 @@ import {Producto} from 'src/app/interfaces/producto.interface';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  carro:Producto[] = [];
-  // anio: number = new Date().getFullYear();
-  // mes: number = new Date().getMonth();
-  // dia: number = new Date().getDay();
-
-  agregarcarro(item: any) {
-    this.carro.push(item);
-    console.log(item)
-    console.log("nombre añadido al carro", item.nombre);
+  // palabraBuscada: any;
+  productos: Producto[] = [];
   
-}
 
-  constructor() { }
+
+
+
+  constructor(public productoService: ProductoService) { }
 
   ngOnInit(): void {
+    // this.productoService.cargarProductos().subscribe((response) => {
+    //   this.
+    // });
   }
+
+  busqueda(palabraBuscada: string){
+    let result = this.productoService.productos
+    result= this.productos.filter(producto =>{
+      producto.nombre?.match(palabraBuscada)
+    })
+    console.log(result)
+
+  }
+
+  // busqueda(){
+  //   if(this.palabraBuscada == ""){
+  //     this.ngOnInit();
+  //   }else{
+  //     this.productos = this.productos.filter(response =>{
+  //       return response.
+
+  //     })
+      
+  //   }
+
+
+  // }
 
 }

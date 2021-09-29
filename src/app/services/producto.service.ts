@@ -8,16 +8,17 @@ import {Lista_producto} from '../interfaces/producto.interface';
 })
 
 export class ProductoService {
-  // url = 'assets/data/productos.json'
+  
   productos: Producto|any={};
-  // productosdos: Producto|any={};
-  // lista_productos : Lista_producto[] = [];
+  productos_filtrados: Producto[]|any = [];
+
   carro_compras: Producto[] = []
   constructor(private http:HttpClient) {
     this.cargarProductos();
     // this.cargarProductosdos();
     console.log("producto service");
    }
+
   cargarProductos(){
     this.http.get('assets/data/productos.json').subscribe( (respuesta: any) => {
       this.productos = respuesta;
@@ -25,8 +26,24 @@ export class ProductoService {
     })
   }
 
-  aniadirCarro(carro_compras: any){
-    this.carro_compras.push(carro_compras)
-    console.log(this.carro_compras)
+  aniadirCarro(elemento: any){
+    if(elemento.stock>=1){
+      elemento.stock=elemento.stock-1
+      this.carro_compras.push(elemento)
+      console.log("Stock", elemento.stock);
+      
+
+    }else{
+      alert("Sin Stock");
+    }
+
   }
+
+
+
+  eliminarCarro(elemento: any){
+    // this.carro_compras.
+  }
+
+
 }

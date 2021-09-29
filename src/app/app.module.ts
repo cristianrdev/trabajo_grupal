@@ -18,6 +18,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DetalleComponent } from './detalle/detalle.component';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,11 @@ import { DetalleComponent } from './detalle/detalle.component';
   imports: [
     BrowserModule, 
     AppRoutingModule,
-     FormsModule, 
-     ReactiveFormsModule, 
-     HttpClientModule],
+    FormsModule, 
+    ReactiveFormsModule, 
+    HttpClientModule,
+    // Ng2SearchPipeModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

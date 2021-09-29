@@ -11,6 +11,8 @@ export class ProductosComponent implements OnInit {
   carro:Producto[] = [];
  
   producto:Producto|any =null;
+  busqueda:string="";
+  
   
 
   agregarcarro(item: any) {
@@ -25,6 +27,12 @@ export class ProductosComponent implements OnInit {
   detalle(itemdetalle_id:string) {
     console.log(itemdetalle_id)
     
+  }
+
+  buscar(){
+    console.log(this.busqueda)
+
+
   }
 
 

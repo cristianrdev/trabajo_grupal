@@ -17,6 +17,7 @@ const app_routes: Routes = [
     {path: 'detalle/:id', component: DetalleComponent},
     {path: 'todos_productos', component: ProductosComponent},
     {path: '**', component: NotfoundComponent},
+ 
 
     
 

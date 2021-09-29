@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/"><img src="/assets/img/logo.png" alt="" width="60" height="60"> Tienda Super Gamer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" routerLink="/"><img src="/assets/img/logo.png" alt="" width="60" height="60"> Tienda
+            Super Gamer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -14,26 +16,16 @@
                 </li>
                 <li class="nav-item">
                 <li class="nav-item">
-                    <a class="nav-link" href="/todos_productos">Todos los productos</a>
+                    <a class="nav-link" routerLink="/todos_productos">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " routerLink="/carro">Carro de Compras</a>
+                    <a class="nav-link " routerLink="/carro">Carro de Compras ( {{productoService.carro_compras.length}}
+                        )</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link ">Fecha : {{mes}} - {{dia}} -{{anio}}</a>
-                </li> -->
-
 
 
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item ms-5 mt-1">
-                    <input type="text" class="form-control" id="buscar" placeholder="Busqueda de producto">
-
-                </li>
-                <li class="nav-item ms-1 mt-1">
-                    <a href="#" class="btn btn-primary">Buscar</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link ms-3" routerLink="/register">Registrarse</a>
                 </li>
@@ -45,7 +37,3 @@
     </div>
 </nav>
 
-<div>
-    <!-- {{carro}} -->
-    <!-- <app-carrito></app-carrito> -->
-</div>

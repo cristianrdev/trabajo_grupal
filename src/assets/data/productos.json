@@ -5,7 +5,7 @@
         "nombre": "Play Station 4",
         "Fabricante": "Sony",
         "precio": 400000,
-        "detalle": "detalle play 4",
+        "detalle": "detalle play station 4",
         "stock" : 8,
         "imgSrc": "/assets/img/ps4.png"
       },
@@ -23,7 +23,7 @@
         "nombre": "Play Station 5",
         "Fabricante": "Sony",
         "precio": 700000,
-        "detalle": "detalle nintendo playstation 5",
+        "detalle": "detalle Sony PlayStation 5",
         "stock" : 2,
         "imgSrc": "/assets/img/ps5.PNG"
       },
