@@ -6,30 +6,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 //Componentes
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './compartida/header/header.component';
-import { AsideComponent } from './compartida/aside/aside.component';
-import { FooterComponent } from './compartida/footer/footer.component';
-import { CarruselComponent } from './compartida/carrusel/carrusel.component';
-import { ProductosComponent } from './compartida/productos/productos.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+
+// import { LoginComponent } from './login/login/login.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { LoginModule } from './login/login.module';
+
+import { CompartidaModule } from './compartida/compartida.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    AsideComponent,
-    FooterComponent,
-    CarruselComponent,
-    ProductosComponent,
-    LoginComponent,
-    RegisterComponent,
     HomeComponent,
     NotfoundComponent,
     CarritoComponent,
@@ -42,6 +34,9 @@ import { DetalleComponent } from './detalle/detalle.component';
     FormsModule, 
     ReactiveFormsModule, 
     HttpClientModule,
+    LoginModule,
+    CompartidaModule,
+    
   
     ],
   providers: [],

@@ -41,7 +41,8 @@
                             </p>
 
 
-                            <button class="btn btn btn-secondary" routerLink="/detalle/{{item.id}}">Detalle</button>
+                            <a class="btn btn btn-secondary" routerLink="/detalle/{{item.id}}">Detalle</a>
+                         
 
                             <!-- boton agregar al carrito -->
                             <button *ngIf="item.stock>0" class="btn btn btn-primary ms-3" (click)="agregarcarro(item)"
