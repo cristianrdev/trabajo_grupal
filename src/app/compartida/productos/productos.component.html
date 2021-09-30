@@ -1,75 +1,64 @@
-<!-- comienzo card de contenido -->
-
-
-
-<div class="card card-products">
-    <div class="card-header">
-        <h4 class="text-center">Productos</h4>
-    </div>
-    <div class="d-flex justify-content-end m-3">
-        <div class="">
-            <div class="text-secondary">Escriba su busqueda</div>
+<div class="container">
+    <!-- comienzo card de contenido -->
+    <div class="card card-products">
+        <div class="card-header">
+            <h4 class="text-center">Productos</h4>
         </div>
-        <div class="ms-3">
-            <input type="text" class="form-control" id="buscar" placeholder="Busqueda de producto"
-                [(ngModel)]="busqueda" name="busqueda">
-        </div>
-
-    </div>
-
-
-
-
-    <div class="card-body">
-        <div class="row">
-            <div *ngFor="let item of productoService.productos" class="col-4">
-
-                <div class="text-center">
-
-
-
-
-                    <div class="card"
-                        *ngIf="busqueda=='' || item.nombre.toLowerCase().indexOf(busqueda.toLowerCase()) > -1">
-                        <div class="card-header">{{item.nombre}}</div>
-                        <div class="card-body">
-                            <img src={{item.imgSrc}} alt={{item.name}} width="200" class="img-card">
-                            <hr>
-                            <p>{{item.precio | currency:'CLP':'symbol-narrow' }} /
-                                <strong *ngIf="item.stock>0">Stock {{item.stock}}</strong>
-                                <strong *ngIf="item.stock<=0">Sin Stock</strong>
-                            </p>
-
-
-                            <a class="btn btn btn-secondary" routerLink="/detalle/{{item.id}}">Detalle</a>
-                         
-
-                            <!-- boton agregar al carrito -->
-                            <button *ngIf="item.stock>0" class="btn btn btn-primary ms-3" (click)="agregarcarro(item)"
-                                routerLink="/carro">Agregar Al
-                                carrito</button>
-                            <!-- FIN boton agregar al carrito -->
-
-
-                        </div>
-                    </div>
-                    <br>
-
-
-
-
-                </div>
+        <div class="d-flex justify-content-end m-3">
+            <div class="">
+                <div class="text-secondary">Escriba su busqueda</div>
+            </div>
+            <div class="ms-3">
+                <input type="text" class="form-control" id="buscar" placeholder="Busqueda de producto"
+                    [(ngModel)]="busqueda" name="busqueda">
             </div>
 
         </div>
 
 
 
+        <div>
+
+       
+        <div class="card-body">
+
+            <div class="row">
+
+                <div *ngFor="let item of productoService.productos" class="col-4">
+
+                    <div class="text-center">
+
+                        <div class="card"
+                            *ngIf="busqueda=='' || item.nombre.toLowerCase().indexOf(busqueda.toLowerCase()) > -1">
+                            <div class="card-header">{{item.nombre}}</div>
+                            <div class="card-body">
+                                <img src={{item.imgSrc}} alt={{item.name}} width="200" class="img-card">
+                                <hr>
+                                <p>{{item.precio | currency:'CLP':'symbol-narrow' }} /
+                                    <strong *ngIf="item.stock>0">Stock {{item.stock}}</strong>
+                                    <strong *ngIf="item.stock<=0">Sin Stock</strong>
+                                </p>
+                                <a class="btn btn btn-secondary" routerLink="/detalle/{{item.id}}">Detalle</a>
+                                <!-- boton agregar al carrito -->
+                                <button *ngIf="item.stock>0" class="btn btn btn-primary ms-3"
+                                    (click)="agregarcarro(item)" routerLink="/carro">Agregar Al
+                                    carrito</button>
+                                <!-- FIN boton agregar al carrito -->
+
+
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
-
-
-
-
-
+    </div>
     <!-- fin card de contenido -->
+</div>

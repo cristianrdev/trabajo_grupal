@@ -4,18 +4,21 @@ import {RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalComponent
   ],
 
   exports: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalComponent
 
 
   ],

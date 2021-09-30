@@ -12,6 +12,7 @@ export class ProductosComponent implements OnInit {
  
   producto:Producto|any =null;
   busqueda:string="";
+  id_producto: string="";
   
   
 
@@ -35,6 +36,11 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  capturarId(id: any): void{
+    console.log("Se eliminará el producto id", id)
+
   }
 
 }

@@ -1,0 +1,88 @@
+<div class="container">
+
+
+    <form (ngSubmit)="confirmarPago()" class="col-md-6 form-register col-xs-12" routerLink="/pago">
+
+        <h2> Ingrese sus datos de pago </h2>
+
+        <div class="mb-3">
+            <label for="tipo_tarjeta" class="form-label">Tipo de tarjeta : </label>
+            <!-- <input [(ngModel)]="tipo_tarjeta" name="tipo_tarjeta" type="text" class="form-control" id="tipo_tarjeta"> -->
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="tipo_tarjeta" name="tipo_tarjeta">
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="dinersclub">Diners Club</option>
+            </select>
+            <div id="ciudadHelp" class="form-text">Mayor a 3 caracteres.</div>
+            {{tipo_tarjeta}}
+        </div>
+        <div class="mb-3">
+            <label for="nombre_cliente" class="form-label">Nombre del dueño de la tarjeta : </label>
+            <input [(ngModel)]="nombre_cliente" name="nombre_cliente" type="text" class="form-control"
+                id="nombre_cliente">
+            <div id="ciudadHelp" class="form-text">Tal y como aparece en su tarjeta</div>
+            {{nombre_cliente}}
+        </div>
+        <div class="mb-3">
+            <label for="numero_tarjeta" class="form-label">Número de la tarjeta de crédito : </label>
+            <input [(ngModel)]="numero_tarjeta" name="numero_tarjeta" type="text" class="form-control"
+                id="numero_tarjeta">
+            {{numero_tarjeta}}
+        </div>
+        <div class="mb-3">
+            <label for="codigo_seguridad" class="form-label">Código de seguridad de la tarjeta : </label>
+            <input [(ngModel)]="codigo_seguridad" name="codigo_seguridad" type="password" class="form-control"
+                id="calle">
+            <div id="calledHelp" class="form-text">Código de 3 dígitos al reverso de la tarjeta.</div>
+            {{codigo_seguridad}}
+        </div>
+
+        <div class="mb-3">
+            <label for="mes_exp" class="form-label">Mes de expiración: </label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="mes_exp" name="mes_exp">
+                <option value="enero">Enero</option>
+                <option value="febrero">Febrero</option>
+                <option value="marzo">Marzo</option>
+                <option value="abril">Abril</option>
+                <option value="mayo">Mayo</option>
+                <option value="junio">Junio</option>
+                <option value="julio">Julio</option>
+                <option value="agosto">Agosto</option>
+                <option value="septiembre">Septiembre</option>
+                <option value="octubre">Octubre</option>
+                <option value="noviembre">Noviembre</option>
+                <option value="diciembre">Diciembre</option>
+            </select>
+        </div>
+        {{mes_exp}}
+        <div class="mb-3">
+            <label for="anio_exp" class="form-label">Año de expiración: </label>
+            <input [(ngModel)]="anio_exp" name="anio_exp" type="text" class="form-control" id="anio_exp">
+        </div>
+        {{anio_exp}}
+
+
+        <button type="submit" class="btn btn-primary" id="registrar"  routerLink="/pago">Finalizar compra</button> <br /> <br />
+    </form>
+
+    <ul>
+        <li *ngFor="let err of errores; let i = index" class="text-danger">
+            {{err}}
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="alert alert-success col-3 text-center" role="alert" *ngIf="registered">
+            Se ha registrado exitosamente
+        </div>
+
+        <div class="alert alert-danger col-3 text-center" role="alert" *ngIf="errorRegister">
+            Ingrese sus datos correctamente
+        </div>
+
+    </div>
+    <a routerLink="/direccion">Volver a dirección</a>
+
+
+
+</div>

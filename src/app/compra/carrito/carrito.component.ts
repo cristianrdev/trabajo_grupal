@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductosComponent} from 'src/app/compartida/productos/productos.component';
 import { ProductoService } from 'src/app/services/producto.service';
-import { Producto } from '../interfaces/producto.interface';
+import { Producto } from 'src/app/interfaces/producto.interface';
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -10,7 +10,8 @@ import { Producto } from '../interfaces/producto.interface';
 
 export class CarritoComponent implements OnInit {
 
-  carro:Producto[] = [];
+  // carro:Producto[] = [];
+  
   
 
   constructor(public productoService: ProductoService) { }

@@ -1,9 +1,17 @@
+<div class="row">
+  <div class="col text-center">
+    <img src="/assets/img/enconstruccion.png" alt="Sitio en Construcción" width="80%">
+  </div>
+</div>
 
 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+<app-modal
+[titulo]="Titulo2"
+[accion]="Accion" 
+(accionModal)="capturarVariable($event)">
+</app-modal>
 
 
-    <div class="row">
-      <div class="col text-center">
-        <img src="/assets/img/enconstruccion.png" alt="Sitio en Construcción" width="80%">
-      </div>
-    </div>

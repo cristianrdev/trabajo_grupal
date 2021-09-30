@@ -12,11 +12,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CarritoComponent } from './carrito/carrito.component';
+// import { CarritoComponent } from './carrito/carrito.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { LoginModule } from './login/login.module';
-
 import { CompartidaModule } from './compartida/compartida.module';
+import { CompraModule } from './compra/compra.module';
+
+
+
+
 
 
 @NgModule({
@@ -24,8 +28,9 @@ import { CompartidaModule } from './compartida/compartida.module';
     AppComponent,
     HomeComponent,
     NotfoundComponent,
-    CarritoComponent,
+    // CarritoComponent,
     DetalleComponent,
+  
     
   ],
   imports: [
@@ -36,6 +41,9 @@ import { CompartidaModule } from './compartida/compartida.module';
     HttpClientModule,
     LoginModule,
     CompartidaModule,
+    CompraModule,
+    
+  
     
   
     ],
