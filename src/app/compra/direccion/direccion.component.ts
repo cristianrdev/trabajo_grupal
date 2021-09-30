@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Direccion} from 'src/app/interfaces/direccion.interface';
 import { ProductoService } from 'src/app/services/producto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-direccion',
@@ -8,11 +9,11 @@ import { ProductoService } from 'src/app/services/producto.service';
   styleUrls: ['./direccion.component.css']
 })
 export class DireccionComponent implements OnInit {
-  @Input() pais: string = '';
-  @Input() region: string = '';
-  @Input() ciudad: string = '';
-  @Input() calle: string = '';
-  @Input() cod_postal: string = '';
+  pais: string | any;
+  region: string| any;
+  ciudad: string| any;
+  calle: string | any;
+  cod_postal: string | any;
   // direccion: Direccion[] | any = []
 
 
@@ -24,7 +25,13 @@ export class DireccionComponent implements OnInit {
   errores:string[] = [];
 
 
-  constructor(public productoService: ProductoService) { }
+  constructor(public productoService: ProductoService, private router: Router) { 
+   this.pais = productoService.direccion.pais;
+   this.region = productoService.direccion.region;
+   this.ciudad = productoService.direccion.ciudad;
+   this.calle = productoService.direccion.calle;
+   this.cod_postal = productoService.direccion.cod_postal;
+  }
 
   registrarDomicilio(){
     let direccion: Direccion = {
@@ -74,13 +81,15 @@ export class DireccionComponent implements OnInit {
 
     if(this.errorRegister==false){
 
-      console.log("Formulario aprobado")
+      console.log("Formulario direccion aprobado")
       direccion.pais = this.pais
       direccion.region = this.region
       direccion.ciudad = this.ciudad
       direccion.calle = this.calle
       direccion.cod_postal = this.cod_postal
       this.productoService.aniadirDireccion(direccion)
+      this.router.navigate(['/pago']);
+     
       
 
 

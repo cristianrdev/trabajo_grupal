@@ -1,0 +1,80 @@
+<div class="container">
+    <h1> Muchas gracias por tu preferencia</h1>
+    <h3>Estos son tus productos comprados</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID producto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of productoService.carro_compras">
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio| currency:'CLP':'symbol-narrow'}}</td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+    <h3>Estos son tus datos de pago</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre Titular tarjeta</th>
+                <th scope="col">Tipo de tarjeta</th>
+                <th scope="col">Numero de tarjeta</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{productoService.pago.nombre_tarjeta}}</td>
+                <td>{{productoService.pago.tipo_tarjeta}}</td>
+                <td>{{productoService.pago.numero_tarjeta}}</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+    <h3>Datos para el envío</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">País</th>
+                <th scope="col">Región</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Calle</th>
+                <th scope="col">Codigo Postal</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{productoService.direccion.pais}}</td>
+                <td>{{productoService.direccion.region}}</td>
+                <td>{{productoService.direccion.ciudad}}</td>
+                <td>{{productoService.direccion.calle}}</td>
+                <td>{{productoService.direccion.cod_postal}}</td>
+
+
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+
+
+
+</div>

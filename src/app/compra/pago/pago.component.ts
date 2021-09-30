@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Pago } from 'src/app/interfaces/pago.interface';
+import { ProductoService } from 'src/app/services/producto.service';
+
 
 @Component({
   selector: 'app-pago',
@@ -10,7 +14,6 @@ export class PagoComponent implements OnInit {
   nombre_cliente: string = '';
   numero_tarjeta: string = '';
   codigo_seguridad: string = '';
-
   mes_exp: string = '';
   anio_exp: string = '';
   
@@ -19,13 +22,34 @@ export class PagoComponent implements OnInit {
   errorRegister: boolean | null = false;
   errores:string[] = [];
 
-  constructor() { }
+  constructor(public productoService: ProductoService, private router: Router) { 
+    console.log("Dirección", productoService.direccion)
+    this.tipo_tarjeta = productoService.pago.tipo_tarjeta
+    this.nombre_cliente = productoService.pago.nombre_cliente
+    this.numero_tarjeta = productoService.pago.numero_tarjeta
+    this.codigo_seguridad = productoService.pago.codigo_seguridad
+    this.mes_exp = productoService.pago.mes_exp
+    this.anio_exp = productoService.pago.anio_exp
+
+  }
 
   ngOnInit(): void {
   }
 
 
   confirmarPago(){
+
+    let pago: Pago = {
+      tipo_tarjeta: '',
+      nombre_cliente:'',
+      numero_tarjeta:'',
+      codigo_seguridad:'',
+      mes_exp: '',
+      anio_exp:'',
+
+    }
+
+
     this.registered = false;
     this.errorRegister = false;
     this.errores = [];
@@ -68,6 +92,36 @@ export class PagoComponent implements OnInit {
      
     }
 
+    if(this.errorRegister==false){
+
+      console.log("Formulario pago aprobado")
+      pago.tipo_tarjeta = this.tipo_tarjeta
+      pago.nombre_cliente = this.nombre_cliente
+      pago.numero_tarjeta = this.numero_tarjeta
+      pago.codigo_seguridad = this.codigo_seguridad
+      pago.mes_exp = this.mes_exp
+      pago.anio_exp = this.anio_exp
+      this.productoService.aniadirPago(pago)
+      this.router.navigate(['/resumencompra']);
+         
+      // direccion.pais = this.pais
+      // direccion.region = this.region
+      // direccion.ciudad = this.ciudad
+      // direccion.calle = this.calle
+      // direccion.cod_postal = this.cod_postal
+      // this.productoService.aniadirDireccion(direccion)
+      // this.router.navigate(['/pago']);
+     
+      // tipo_tarjeta: '',
+      // nombre_cliente:'',
+      // numero_tarjeta:'',
+      // codigo_seguridad:'',
+      // mes_exp: '',
+      // anio_exp:'',
+
+    }
+
+    // this.productoService.aniadirPago(){}
 
   }
 

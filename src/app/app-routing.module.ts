@@ -7,6 +7,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { CarritoComponent } from './compra/carrito/carrito.component';
 import { DireccionComponent } from './compra/direccion/direccion.component';
 import { PagoComponent } from './compra/pago/pago.component';
+import { ResumencompraComponent } from './compra/resumencompra/resumencompra.component';
 import { DetalleComponent } from './detalle/detalle.component';
 
 import { LoginComponent } from './login/login/login.component';
@@ -19,6 +20,7 @@ const app_routes: Routes = [
     {path: 'carro', component: CarritoComponent},
     {path: 'direccion', component: DireccionComponent},
     {path: 'pago', component: PagoComponent},
+    {path: 'resumencompra', component: ResumencompraComponent},
     {path: 'detalle/:id', component: DetalleComponent},
     {path: 'todos_productos', component: ProductosComponent},
     {path: '**', component: NotfoundComponent},

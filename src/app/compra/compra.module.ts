@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DireccionComponent } from './direccion/direccion.component';
 import { PagoComponent } from './pago/pago.component';
+import { ResumencompraComponent } from './resumencompra/resumencompra.component';
 
 
 
@@ -13,7 +14,8 @@ import { PagoComponent } from './pago/pago.component';
   declarations: [
     CarritoComponent,
     DireccionComponent,
-    PagoComponent
+    PagoComponent,
+    ResumencompraComponent
   ],
   imports: [
     CommonModule,

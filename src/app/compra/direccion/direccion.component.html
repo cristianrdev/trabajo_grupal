@@ -7,27 +7,27 @@
 
         <div class="mb-3">
             <label for="pais" class="form-label">País : </label>
-            <input [(ngModel)]="pais" name="pais" type="text" class="form-control" id="pais" >
+            <input [(ngModel)]="pais" name="pais" type="text" class="form-control" id="pais" value="{{productoService.direccion.pais}}">
             <div id="ciudadHelp" class="form-text">Mayor a 3 caracteres.</div>
-            {{pais}}
+         
         </div>
         <div class="mb-3">
             <label for="region" class="form-label">Region : </label>
-            <input [(ngModel)]="region" name="region" type="text" class="form-control" id="region">
+            <input [(ngModel)]="region" name="region" type="text" class="form-control" id="region" value="{{region}}">
             <div id="ciudadHelp" class="form-text">Mayor a 3 caracteres.</div>
-            {{region}}
+           
         </div>
         <div class="mb-3">
             <label for="ciudad" class="form-label">Ciudad : </label>
             <input [(ngModel)]="ciudad" name="ciudad" type="text" class="form-control" id="ciudad">
             <div id="ciudadHelp" class="form-text">Mayor a 3 caracteres.</div>
-            {{ciudad}}
+           
         </div>
         <div class="mb-3">
             <label for="calle" class="form-label">Calle : </label>
             <input [(ngModel)]="calle" name="calle" type="calle" class="form-control" id="calle">
             <div id="calledHelp" class="form-text">Mayor a 3 caracteres.</div>
-            {{calle}}
+           
         </div>
 
         <div class="mb-3">
@@ -35,8 +35,8 @@
             <input [(ngModel)]="cod_postal" name="cod_postal" type="text" class="form-control" id="cod_postal">
             <div id="calledHelp" class="form-text">De 7 caracteres numéricos.</div>
         </div>
-        {{cod_postal}}
-        <button type="submit" class="btn btn-primary" id="registrar">Registrar</button> <br /> <br />
+        
+        <button type="submit" class="btn btn-primary" id="registrar">Registrar</button> <br/> <br />
     </form>
 
     <ul>
@@ -47,7 +47,7 @@
 
     <div class="row">
         <div class="alert alert-success col-3 text-center" role="alert" *ngIf="registered">
-            Se ha registrado exitosamente
+            Se ha registrado exitosamente su direccion de despacho
         </div>
     
         <div class="alert alert-danger col-3 text-center" role="alert" *ngIf="errorRegister">

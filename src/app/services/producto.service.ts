@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+//interfases
 import {Producto} from '../interfaces/producto.interface';
 import {Direccion} from '../interfaces/direccion.interface';
-import { HttpClient } from '@angular/common/http';
+import {Pago} from '../interfaces/pago.interface';
+
 
 
 @Injectable({
@@ -13,6 +16,8 @@ export class ProductoService {
   productos: Producto|any={};
   productos_filtrados: Producto[]|any = [];
   direccion: Direccion[]|any = [];
+  pago: Pago[]|any = [];
+
 
   carro_compras: Producto[] = []
   constructor(private http:HttpClient) {
@@ -40,6 +45,14 @@ export class ProductoService {
   aniadirDireccion(direcc: any){
     this.direccion = direcc;
     console.log("agregada la direccion", direcc);
+
+
+  }
+
+
+  aniadirPago(pag: any){
+    this.pago = pag;
+    console.log("agregado el pago", pag);
     
 
   }
